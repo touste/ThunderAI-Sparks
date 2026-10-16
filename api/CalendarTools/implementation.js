@@ -51,7 +51,7 @@
               let endDate = cal.createDateTime(cal_data.endDate)
 
               if(cal_data.use_timezone) {
-                const timezoneService = new CalTimezoneService();
+                const timezoneService = CalTimezoneService;
                 startDate.timezone = timezoneService.getTimezone(cal_data.timezone);
                 endDate.timezone = timezoneService.getTimezone(cal_data.timezone);
               }
@@ -112,7 +112,7 @@
                 let initialDate = task_data.initialDate ? cal.createDateTime(task_data.initialDate) : null;
 
                 if (task_data.use_timezone) {
-                const timezoneService = new CalTimezoneService();
+                const timezoneService = CalTimezoneService;
                 if (dueDate) {
                   dueDate.timezone = timezoneService.getTimezone(task_data.timezone);
                 }
